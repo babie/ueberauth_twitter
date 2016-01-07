@@ -34,7 +34,7 @@ defmodule Ueberauth.Strategy.Twitter.OAuth do
   def authorize_url!({token, _token_secret}, opts \\ []) do
     opts
     |> client
-    |> to_url(:authorize_url, %{"oauth_token" => List.to_string(token)})
+    |> to_url(:authorize_url, %{"oauth_token" => List.to_string(token), "force_login" => "true"})
   end
 
   def client(opts \\ []) do
